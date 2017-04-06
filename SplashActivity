@@ -1,0 +1,19 @@
+  OnCreate
+	先下载广告位
+	OnResume
+	查看是否是跳转过来是的话
+  否则
+  first time start up or just after update app更新app
+   if (UserDomain.isLogin()) {
+                            ActivityInfo full = ActivityInfo.getValidInfo(Global.getAds().fullScreen);
+                            if (mAdCached = full != null && !mHasShowFullScreenAdOnce) {
+                                startActivity(new Intent(SplashActivity.this, FullscreenAdActivity.class));
+                            } else {
+                                // should go to main activity
+                                startActivity(ActionDomain.getFirstPageAction(SplashActivity.this));
+                            }
+                        } else {
+                            // should go to login activity
+                            startActivity(ActionDomain.getFirstPageAction(SplashActivity.this));
+                        }
+  
